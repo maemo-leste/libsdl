@@ -1,0 +1,20 @@
+Index: SDL-1.2.13/src/video/x11/SDL_x11video.c
+===================================================================
+--- SDL-1.2.13.orig/src/video/x11/SDL_x11video.c	2009-03-11 17:47:54.000000000 +0200
++++ SDL-1.2.13/src/video/x11/SDL_x11video.c	2009-03-11 17:49:46.000000000 +0200
+@@ -1086,13 +1086,13 @@
+ 	/* Map them both and go fullscreen, if requested */
+ 	if ( ! SDL_windowid ) {
+ 		XMapWindow(SDL_Display, SDL_Window);
+-		XMapWindow(SDL_Display, WMwindow);
+-		X11_WaitMapped(this, WMwindow);
+ 		if ( flags & SDL_FULLSCREEN ) {
+ 			screen->flags |= SDL_FULLSCREEN;
+ 			X11_EnterFullScreen(this);
+ 		} else {
+ 			screen->flags &= ~SDL_FULLSCREEN;
++			XMapWindow(SDL_Display, WMwindow);
++			X11_WaitMapped(this, WMwindow);
+ 		}
+ 	}
+ 	

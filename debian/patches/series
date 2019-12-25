@@ -1,0 +1,12 @@
+replace-relicenced-SDL_qsort.patch
+x11_keytounicode.diff
+dont_propagate_lpthread.diff
+fix_build_joystick_freebsd.diff
+fix_window_resizing.diff
+fix_joystick_misc_axes.diff
+sdl-check-for-SDL_VIDEO_X11_BACKINGSTORE.patch
+310_fix_marbles.diff
+320_no_fullscreen_grab.diff
+330_pulseaudio_tease.diff
+340_fs_notor.diff
+350_nc_friendship.diff

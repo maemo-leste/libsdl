@@ -1,0 +1,24 @@
+--- a/src/video/x11/SDL_x11events.c
++++ b/src/video/x11/SDL_x11events.c
+@@ -487,7 +487,7 @@
+ #endif
+ 		/* Queue leaving fullscreen mode */
+ 		switch_waiting = 0x01;
+-		switch_time = SDL_GetTicks() + 200;
++		switch_time = SDL_GetTicks();
+ 	    }
+ 	    break;
+ 
+@@ -939,11 +939,7 @@
+ 		now  = SDL_GetTicks();
+ 		if ( pending || !SDL_VideoSurface ) {
+ 			/* Try again later... */
+-			if ( switch_waiting & SDL_FULLSCREEN ) {
+-				switch_time = now + 1500;
+-			} else {
+-				switch_time = now + 200;
+-			}
++			/* ...but in this century, if possible. */
+ 		} else if ( (int)(switch_time-now) <= 0 ) {
+ 			Uint32 go_fullscreen;
+ 
